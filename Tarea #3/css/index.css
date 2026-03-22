@@ -1,0 +1,236 @@
+/* GENERAL */
+html { font-size: 16px; scroll-behavior: smooth; }
+
+body {
+    background-color: #0a0a0a;
+    color: #f5f0e8;
+    font-family: 'Lato', sans-serif;
+    overflow-x: hidden;
+}
+
+h1, h2, h3 { font-family: 'Playfair Display', serif; }
+h1 { font-size: 4rem; }
+h2 { font-size: 2.5rem; }
+h3 { font-size: 2rem; }
+p  { font-size: 1.3rem; line-height: 1.8; }
+
+.titulajes { color: #c9a84c; font-size: 2.5rem; }
+.negrita   { font-weight: 700; }
+.espacio   { padding: 100px 0; }
+.linea     { border-top: 1px solid rgba(201,168,76,0.3); margin: 4rem 0; }
+
+
+/* BANNER PRINCIPAL */
+.banner-section {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+    background-image: url('../imagenes/violin.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-color: #772626;
+    background-blend-mode: multiply;
+    box-shadow: inset 0 0 0 1000px rgba(0,0,0,0.6);
+}
+
+.titulo { color: #fff; }
+
+
+/* VIDEO MP4 */
+.video-responsive { width: 100%; height: auto; display: block; }
+
+/* VIDEO YOUTUBE RESPONSIVO */
+.contenedor-video {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%; /* proporción 16:9 */
+    height: 0;
+    overflow: hidden;
+}
+
+.contenedor-video iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+
+/* FORMULARIO SUSCRIPCION */
+.form-suscripcion input[type="email"] {
+    background: #1e1e1e !important;
+    border: 1px solid #c9a84c;
+    color: #f5f0e8 !important;
+    padding: 10px 16px;
+    width: 100%;
+    font-size: 1rem;
+}
+
+.form-suscripcion input[type="email"]:hover { outline: 2px solid #9b1c1c; }
+
+.btn-suscribir {
+    width: 100%;
+    padding: 12px;
+    margin-top: 10px;
+    background-color: #9b1c1c;
+    border: none;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.btn-suscribir:hover { background-color: #c0392b; }
+
+
+/* BANNER PARALLAX */
+.bannerparallax {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 40vh;
+    background-image: url('../imagenes/teatro.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-color: #fff;
+    background-blend-mode: multiply;
+    box-shadow: inset 0 0 0 1000px rgba(0,0,0,0.45);
+}
+
+
+/* FORMULARIO PRINCIPAL - ETIQUETAS */
+label {
+    color: #c9a84c;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    margin-top: 16px;
+    display: block;
+}
+
+/* FORMULARIO PRINCIPAL - CAMPOS */
+input, textarea, select {
+    width: 100%;
+    background-color: #1e1e1e !important;
+    border: 1px solid rgba(201,168,76,0.4);
+    color: #f5f0e8 !important;
+    padding: 10px 14px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+input:hover, textarea:hover, select:hover { outline: 2px solid #9b1c1c; }
+
+textarea { resize: none; height: 130px; }
+
+/* FORMULARIO PRINCIPAL - BOTONES */
+.enviar {
+    padding: 14px 40px;
+    background-color: #9b1c1c;
+    border: none;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    margin: 20px 10px;
+}
+
+.enviar:hover { background-color: #c0392b; }
+
+.borrar {
+    padding: 14px 40px;
+    background-color: transparent;
+    border: 1px solid #c9a84c;
+    color: #c9a84c;
+    font-size: 1rem;
+    cursor: pointer;
+    margin: 20px 10px;
+}
+
+.borrar:hover { background-color: #c9a84c; color: #0a0a0a; }
+
+
+/* FONDO SECCIONES */
+.fondo2 { background-color: #1a1a1a; }
+
+
+/* PIE DE PAGINA */
+footer {
+    background-color: #060606;
+    border-top: 1px solid #9b1c1c;
+    color: #f5f0e8;
+    padding: 50px 0 20px;
+}
+
+
+/* CHAT WHATSAPP */
+.container-botonws {
+    background-color: #25d366;
+    position: fixed;
+    z-index: 1000;
+    border-radius: 50%;
+    bottom: 90px;
+    right: 25px;
+    padding: 18px;
+    animation: efecto 1.2s infinite;
+    transition: transform 0.3s;
+}
+
+.container-botonws:hover { transform: scale(1.1); }
+
+.botonws { width: 38px; }
+
+@keyframes efecto {
+    0%   { box-shadow: 0 0 0 0    rgba(37,211,102,0.7); }
+    100% { box-shadow: 0 0 0 20px rgba(37,211,102,0);   }
+}
+
+
+/* BOTON SCROLL TOP */
+.goto-top {
+    position: fixed;
+    bottom: 20px;
+    right: 25px;
+    width: 50px;
+    height: 50px;
+    background-color: #9b1c1c;
+    border: none;
+    border-radius: 50%;
+    color: #fff;
+    font-size: 1.4rem;
+    line-height: 1;
+    cursor: pointer;
+    /* oculto por defecto con visibilidad, no con display */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s, background-color 0.3s;
+    z-index: 999;
+}
+
+.goto-top.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.goto-top:hover { background-color: #c0392b; }
+
+
+/* MEDIA QUERIES */
+@media (max-width: 575px) {
+    .titulo { font-size: 2.5rem; margin-top: 100px; }
+    p { font-size: 1.1rem !important; }
+    .bannerparallax { height: 100vh; }
+}
+
+@media (min-width: 768px) {
+    .bannerparallax { height: 40vh; }
+}
+
+.video-responsive {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+}
