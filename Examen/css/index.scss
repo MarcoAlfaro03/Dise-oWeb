@@ -1,0 +1,519 @@
+// =============================================
+// IMPORTAR FUENTES — Google Fonts
+// =============================================
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Montserrat:wght@300;400;500&display=swap");
+
+
+// =============================================
+// VARIABLES
+// =============================================
+$negro:       #0a0a0a;
+$rojo:        #9b1c1c;
+$rojo-vivo:   #c0392b;
+$dorado:      #c9a84c;
+$gris:        #1a1a1a;
+$gris-claro:  #2d2d2d;
+$crema:       #f5f0e8;
+$blanco:      #ffffff;
+
+$fuente-titulo: "Cormorant Garamond", serif;
+$fuente-cuerpo: "Montserrat", sans-serif;
+
+$transicion: all 0.3s ease;
+
+
+// =============================================
+// BASE
+// =============================================
+html {
+    font-size: 18px;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: $fuente-cuerpo;
+    background-color: $negro;
+    color: $crema;
+    overflow-x: hidden;
+}
+
+h1 { font-family: $fuente-titulo; font-size: 4rem; }
+h2 { font-family: $fuente-titulo; font-size: 2.5rem; }
+h3 { font-family: $fuente-titulo; font-size: 1.8rem; }
+h5 { font-family: $fuente-titulo; font-size: 1.4rem; font-weight: 600; }
+p  { font-size: 1rem; line-height: 1.9; color: $crema; }
+
+i { font-size: 4rem; }
+
+
+// =============================================
+// CLASES UTILITARIAS
+// =============================================
+.titulajes {
+    color: $dorado;
+    font-family: $fuente-titulo;
+    font-size: 2.5rem;
+    font-weight: 600;
+}
+
+.negrita { font-weight: 600; }
+
+.linea {
+    border-top: 1px solid rgba($dorado, 0.3);
+    margin: 4rem 0;
+}
+
+.linea-dorada {
+    width: 60px;
+    height: 2px;
+    background: $dorado;
+    margin: 16px auto;
+}
+
+// Compensar el navbar fixed en la navegación por secciones
+section[id] {
+    scroll-margin-top: 75px;
+}
+
+
+// =============================================
+// ANIMACIONES
+// =============================================
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes latido {
+    0%, 100% { transform: scale(1); }
+    50%       { transform: scale(1.08); }
+}
+
+@keyframes efecto-ws {
+    0%   { box-shadow: 0 0 0 0    rgba(37, 211, 102, 0.7); }
+    100% { box-shadow: 0 0 0 20px rgba(37, 211, 102, 0);   }
+}
+
+.animar-entrada   { animation: fadeInUp 0.9s ease both; }
+.animar-entrada-2 { animation: fadeInUp 0.9s ease 0.3s both; }
+.animar-entrada-3 { animation: fadeInUp 0.9s ease 0.6s both; }
+
+
+// =============================================
+// MENÚ RESPONSIVO
+// =============================================
+.navbar {
+    background-color: rgba($negro, 0.97) !important;
+    border-bottom: 1px solid rgba($rojo, 0.6);
+    padding: 14px 0;
+
+    .navbar-brand {
+        font-family: $fuente-titulo;
+        font-size: 1.5rem;
+        color: $dorado !important;
+        font-style: italic;
+    }
+
+    .nav-link {
+        font-family: $fuente-cuerpo;
+        font-size: 0.68rem;
+        font-weight: 500;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        color: $crema !important;
+        padding: 6px 14px !important;
+        transition: $transicion;
+
+        &:hover { color: $dorado !important; }
+    }
+
+    // Submenú dropdown
+    .dropdown-menu {
+        background-color: $gris;
+        border: 1px solid rgba($dorado, 0.3);
+        border-radius: 0;
+        min-width: 210px;
+
+        .dropdown-item {
+            color: $crema;
+            font-family: $fuente-cuerpo;
+            font-size: 0.72rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            padding: 10px 20px;
+            transition: $transicion;
+
+            &:hover {
+                background-color: $rojo;
+                color: $blanco;
+            }
+        }
+    }
+
+    // Hamburguesa personalizada color dorado
+    .navbar-toggler {
+        border: 1px solid rgba($dorado, 0.5);
+        padding: 6px 10px;
+
+        &:focus { box-shadow: none; }
+    }
+
+    .navbar-toggler-icon {
+        background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(201,168,76,1)' stroke-width='2.5' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+    }
+}
+
+
+// =============================================
+// HEADER — BANNER PRINCIPAL
+// =============================================
+header {
+    background-image: url("../imagenes/violin.jpg");
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    background-color: #2a0505;
+    background-blend-mode: multiply;
+    box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.65);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    padding-top: 70px;
+
+    h1 {
+        color: $blanco;
+        font-size: clamp(2.5rem, 7vw, 5.5rem);
+        font-style: italic;
+        animation: fadeInUp 1s ease both;
+    }
+
+    .subtitulo-banner {
+        font-family: $fuente-cuerpo;
+        font-size: 0.68rem;
+        letter-spacing: 6px;
+        text-transform: uppercase;
+        color: $dorado;
+        animation: fadeInUp 1s ease 0.3s both;
+    }
+
+    p {
+        color: rgba($blanco, 0.8);
+        animation: fadeInUp 1s ease 0.5s both;
+    }
+
+    .btn-banner {
+        font-family: $fuente-cuerpo;
+        font-size: 0.68rem;
+        letter-spacing: 4px;
+        text-transform: uppercase;
+        padding: 14px 36px;
+        background: transparent;
+        border: 1px solid $dorado;
+        color: $dorado;
+        text-decoration: none;
+        display: inline-block;
+        transition: $transicion;
+        animation: fadeInUp 1s ease 0.7s both;
+
+        &:hover { background: $dorado; color: $negro; }
+    }
+}
+
+
+// =============================================
+// SECCIÓN 1 — NOSOTROS (iconográfica)
+// =============================================
+.seccion1 {
+    background-color: $negro;
+    padding: 100px 0;
+
+    .icon {
+        clip-path: polygon(50% 0%, 90% 20%, 100% 60%, 75% 100%, 25% 100%, 0% 60%, 10% 20%);
+        background-color: $rojo;
+        width: 110px;
+        height: 110px;
+        font-size: 46px;
+        color: $blanco;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        animation: latido 3s ease-in-out infinite;
+        transition: $transicion;
+
+        &:hover { background-color: $dorado; color: $negro; }
+    }
+
+    h3 { color: $dorado; }
+}
+
+
+// =============================================
+// SECCIÓN 2 — ARTISTAS (fotográfica / cards)
+// =============================================
+.seccion2 {
+    background-color: $gris;
+    padding: 100px 0;
+
+    .card {
+        background-color: $gris-claro;
+        border: 1px solid rgba($dorado, 0.15);
+        border-radius: 2px;
+        overflow: hidden;
+        margin-bottom: 28px;
+        transition: $transicion;
+
+        &:hover {
+            border-color: $dorado;
+            transform: translateY(-6px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .card-img-top {
+            height: 220px;
+            object-fit: cover;
+            filter: grayscale(30%);
+            transition: $transicion;
+        }
+
+        &:hover .card-img-top { filter: grayscale(0%); }
+
+        .card-title {
+            color: $dorado;
+            font-family: $fuente-titulo;
+            font-size: 1.3rem;
+        }
+
+        .card-text {
+            color: rgba($crema, 0.7);
+            font-size: 0.85rem;
+        }
+    }
+}
+
+
+// =============================================
+// SECCIÓN 3 — BANNER PARALLAX + BOTÓN PDF
+// =============================================
+.seccion3 {
+    background-image: url("../imagenes/teatro.jpg");
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+    background-color: $rojo;
+    background-blend-mode: multiply;
+    box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.5);
+    height: 50vh;
+    display: flex;
+    align-items: center;
+
+    h2 { color: $blanco; font-style: italic; }
+    p  { color: rgba($blanco, 0.85); }
+
+    .btn-pdf {
+        font-family: $fuente-cuerpo;
+        font-size: 0.68rem;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        padding: 14px 32px;
+        background-color: $rojo;
+        border: 1px solid rgba($blanco, 0.5);
+        color: $blanco;
+        text-decoration: none;
+        display: inline-block;
+        transition: $transicion;
+
+        i { font-size: 1rem; margin-right: 8px; vertical-align: middle; }
+
+        &:hover { background-color: $rojo-vivo; border-color: $blanco; }
+    }
+}
+
+
+// =============================================
+// SECCIÓN 4 — PROGRAMACIÓN (acordeón)
+// =============================================
+.seccion4 {
+    background-color: $negro;
+    padding: 100px 0;
+
+    .accordion-item {
+        background-color: $gris;
+        border: 1px solid rgba($dorado, 0.2);
+        border-radius: 0 !important;
+        margin-bottom: 8px;
+    }
+
+    .accordion-button {
+        background-color: $gris;
+        color: $dorado;
+        font-family: $fuente-titulo;
+        font-size: 1.3rem;
+        border-radius: 0 !important;
+
+        &:not(.collapsed) {
+            background-color: $rojo;
+            color: $blanco;
+            box-shadow: none;
+        }
+
+        &:focus { box-shadow: none; }
+
+        &::after { filter: invert(1) sepia(1) saturate(2) hue-rotate(5deg); }
+    }
+
+    .accordion-body {
+        background-color: $gris-claro;
+        color: rgba($crema, 0.8);
+        font-size: 0.9rem;
+        line-height: 1.8;
+        padding: 20px 24px;
+    }
+}
+
+
+// =============================================
+// SECCIÓN 5 — CONTACTO (informativa, sin form)
+// =============================================
+.seccion5 {
+    background-color: $gris;
+    padding: 100px 0;
+
+    .info-item {
+        text-align: center;
+        padding: 30px 20px;
+        border: 1px solid rgba($dorado, 0.15);
+        margin-bottom: 20px;
+        transition: $transicion;
+
+        &:hover {
+            border-color: rgba($dorado, 0.5);
+            background-color: rgba($dorado, 0.04);
+        }
+
+        i {
+            font-size: 2.5rem;
+            color: $rojo-vivo;
+            display: block;
+            margin-bottom: 16px;
+        }
+
+        h5 { color: $dorado; margin-bottom: 8px; }
+
+        p { font-size: 0.9rem; color: rgba($crema, 0.7); margin: 0; }
+    }
+
+    // Redes sociales — 2 iconos con enlace
+    .redes-sociales {
+        margin-top: 50px;
+        text-align: center;
+
+        .label-redes {
+            font-size: 0.68rem;
+            letter-spacing: 4px;
+            text-transform: uppercase;
+            color: $dorado;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 54px;
+            height: 54px;
+            background: transparent;
+            border: 1px solid rgba($dorado, 0.4);
+            color: $crema;
+            font-size: 1.3rem;
+            margin: 0 8px;
+            text-decoration: none;
+            transition: $transicion;
+
+            &:hover {
+                background-color: $rojo;
+                border-color: $rojo;
+                color: $blanco;
+                transform: translateY(-4px);
+            }
+        }
+    }
+}
+
+
+// =============================================
+// FOOTER
+// =============================================
+footer {
+    background-color: #060606;
+    border-top: 1px solid rgba($rojo, 0.7);
+    color: $crema;
+    padding: 40px 0 20px;
+
+    p { font-size: 0.8rem; color: rgba($crema, 0.4); letter-spacing: 1px; }
+}
+
+
+// =============================================
+// CHAT WHATSAPP FLOTANTE
+// =============================================
+.container-botonws {
+    background-color: #25d366;
+    position: fixed;
+    z-index: 1000;
+    border-radius: 50%;
+    bottom: 90px;
+    right: 25px;
+    padding: 16px;
+    animation: efecto-ws 1.2s infinite;
+    transition: transform 0.3s;
+
+    &:hover { transform: scale(1.1); }
+
+    .botonws { width: 36px; }
+}
+
+
+// =============================================
+// BOTÓN SCROLL TOP
+// =============================================
+.goto-top {
+    position: fixed;
+    bottom: 20px;
+    right: 25px;
+    width: 48px;
+    height: 48px;
+    background-color: $rojo;
+    border: none;
+    border-radius: 50%;
+    color: $blanco;
+    font-size: 1.2rem;
+    line-height: 1;
+    cursor: pointer;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s, visibility 0.3s, background-color 0.3s;
+    z-index: 999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    i { font-size: 1.6rem; }
+
+    &.visible { opacity: 1; visibility: visible; }
+    &:hover   { background-color: $rojo-vivo; }
+}
+
+
+// =============================================
+// MEDIA QUERIES
+// =============================================
+@media (max-width: 575px) {
+    header h1    { font-size: 2.5rem; }
+    p            { font-size: 0.95rem !important; }
+    .seccion3    { height: auto; padding: 80px 0; }
+}
+
+@media (min-width: 768px) {
+    .seccion3 { height: 50vh; }
+}
