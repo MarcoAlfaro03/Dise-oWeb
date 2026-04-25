@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Agendar Cita — Creaciones Marco</title>
+    <link rel="icon" type="image/png" href="favicon_512x512.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://unicons.iconscout.com/release/v4.0.8/css/line.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Raleway:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="css/index.css" rel="stylesheet">
+    <link href="css/reglas.css" rel="stylesheet">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+        <a class="navbar-brand" href="index.html"><em>Creaciones</em> <span>Marco</span></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navMenu">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                <li class="nav-item"><a class="nav-link" href="nosotros.html">Nosotros</a></li>
+                <li class="nav-item"><a class="nav-link" href="servicios.html">Servicios</a></li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Catálogo</a>
+                    <ul class="dropdown-menu">
+                        <li><a class="dropdown-item" href="galeria.html">Galería</a></li>
+                        <li><a class="dropdown-item" href="colecciones.html">Colecciones</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item"><a class="nav-link activo" href="citas.html">Citas</a></li>
+                <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<!-- BANNER PÁGINA -->
+<div style="background-color:#0d1f3c; padding:140px 0 80px; text-align:center;">
+    <div class="container">
+        <span class="subtitulo" style="color:#b0b8c9; display:block; margin-bottom:10px;">Reserva su espacio</span>
+        <h1 style="color:#fff; font-size:clamp(2rem,5vw,3.5rem); font-style:italic; font-family:'Libre Baskerville',serif;">Agendar una cita</h1>
+    </div>
+</div>
+
+<!-- FORMULARIO CITAS -->
+<section class="sec-citas">
+    <div class="container">
+        <div class="row g-5">
+            <div class="col-lg-7">
+                <span class="subtitulo">Formulario de reserva</span>
+                <h2 class="titulo-seccion">Reserve su consulta</h2>
+                <div class="linea-azul"></div>
+                <p class="pt-3 pb-2">Complete el formulario y nos pondremos en contacto para confirmar su cita en un plazo de 24 horas hábiles.</p>
+
+                <form class="form-cita" id="formCita">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label for="nombreTxt">Nombre completo</label>
+                            <input id="nombreTxt" name="nombre" type="text" placeholder="Su nombre completo" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="telefonoTxt">Teléfono</label>
+                            <input id="telefonoTxt" name="telefono" type="tel" placeholder="+506 0000-0000" required>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label for="emailTxt">Correo electrónico</label>
+                            <input id="emailTxt" name="correo" type="email" placeholder="correo@ejemplo.com" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="servicioTxt">Tipo de servicio</label>
+                            <select id="servicioTxt" name="servicio" required>
+                                <option value="">— Seleccione —</option>
+                                <option>Traje ejecutivo a medida</option>
+                                <option>Traje de novio</option>
+                                <option>Camisa personalizada</option>
+                                <option>Alteraciones y ajustes</option>
+                                <option>Uniformes corporativos</option>
+                                <option>Frac y etiqueta</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <label for="fechaTxt">Fecha preferida</label>
+                            <input id="fechaTxt" name="fecha" type="date" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="horaTxt">Hora preferida</label>
+                            <select id="horaTxt" name="hora" required>
+                                <option value="">— Seleccione —</option>
+                                <option>8:00 AM</option>
+                                <option>9:00 AM</option>
+                                <option>10:00 AM</option>
+                                <option>11:00 AM</option>
+                                <option>2:00 PM</option>
+                                <option>3:00 PM</option>
+                                <option>4:00 PM</option>
+                            </select>
+                        </div>
+                    </div>
+                    <label for="comentariosTxt">Comentarios adicionales</label>
+                    <textarea id="comentariosTxt" name="comentarios" placeholder="Cuéntenos más sobre lo que necesita..."></textarea>
+
+                    <!-- Mensaje de respuesta EmailJS -->
+                    <p id="mensajeAlert" style="text-align:center; margin-top:16px; font-weight:600; min-height:24px;"></p>
+
+                    <button class="btn-enviar" type="submit">Solicitar cita</button>
+                </form>
+            </div>
+
+            <div class="col-lg-5">
+                <div class="info-cita">
+                    <span class="subtitulo">Información de la cita</span>
+                    <h3 class="titulo-seccion" style="font-size:1.8rem;">¿Qué esperar?</h3>
+                    <div class="linea-azul"></div>
+                    <p class="pt-3">Su primera consulta es totalmente gratuita y sin compromiso. Nuestro equipo lo asesorará en:</p>
+
+                    <div class="item-info pt-4">
+                        <div class="icono"><i class="uil uil-tape"></i></div>
+                        <div>
+                            <h5>Toma de medidas</h5>
+                            <p>Medición profesional con más de 30 puntos de referencia para un ajuste inigualable.</p>
+                        </div>
+                    </div>
+                    <div class="item-info">
+                        <div class="icono"><i class="uil uil-layer-group"></i></div>
+                        <div>
+                            <h5>Selección de telas</h5>
+                            <p>Acceso a nuestra muestreca con más de 150 telas de importación italiana, inglesa y nacional.</p>
+                        </div>
+                    </div>
+                    <div class="item-info">
+                        <div class="icono"><i class="uil uil-clock"></i></div>
+                        <div>
+                            <h5>Tiempos de entrega</h5>
+                            <p>Trajes ejecutivos: 3–4 semanas. Trajes de novio: 6–8 semanas. Alteraciones: 5–10 días.</p>
+                        </div>
+                    </div>
+                    <div class="item-info">
+                        <div class="icono"><i class="uil uil-map-marker"></i></div>
+                        <div>
+                            <h5>Ubicación</h5>
+                            <p>Av. Central, 150m norte del Teatro Nacional, San José. Parqueo disponible.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <span class="marca-footer"><em>Creaciones</em> <span>Marco</span></span>
+                <p class="descripcion-footer">Sastrería artesanal en San José, Costa Rica. Confeccionamos su imagen desde 1998.</p>
+                <div class="redes-footer pt-3">
+                    <a href="https://www.instagram.com" target="_blank"><i class="uil uil-instagram"></i></a>
+                    <a href="https://www.facebook.com" target="_blank"><i class="uil uil-facebook-f"></i></a>
+                </div>
+            </div>
+            <div class="col-md-2 mb-4">
+                <h6>Páginas</h6>
+                <ul>
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="nosotros.html">Nosotros</a></li>
+                    <li><a href="servicios.html">Servicios</a></li>
+                    <li><a href="galeria.html">Galería</a></li>
+                    <li><a href="colecciones.html">Colecciones</a></li>
+                    <li><a href="citas.html">Citas</a></li>
+                    <li><a href="contacto.html">Contacto</a></li>
+                </ul>
+            </div>
+            <div class="col-md-3 mb-4">
+                <h6>Servicios</h6>
+                <ul>
+                    <li><a href="servicios.html">Trajes a medida</a></li>
+                    <li><a href="servicios.html">Camisas personalizadas</a></li>
+                    <li><a href="servicios.html">Alteraciones</a></li>
+                    <li><a href="servicios.html">Trajes de boda</a></li>
+                </ul>
+            </div>
+            <div class="col-md-3 mb-4">
+                <h6>Contacto</h6>
+                <ul>
+                    <li><a href="#">Av. Central, San José, CR</a></li>
+                    <li><a href="tel:+50622211329">+506 2221-1329</a></li>
+                    <li><a href="mailto:info@creacionesmarco.cr">info@creacionesmarco.cr</a></li>
+                    <li><a href="#">Lun–Vie: 8am–6pm</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="linea-footer"></div>
+        <div class="text-center"><p class="copyright">© 2025 Creaciones Marco. Todos los derechos reservados.</p></div>
+    </div>
+</footer>
+
+<div class="container-botonws">
+    <a href="https://wa.me/50622211329" target="_blank">
+        <img class="botonws" src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp">
+    </a>
+</div>
+<button class="goto-top" id="scrollTop" title="Volver arriba"><i class="uil uil-angle-up"></i></button>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+<!-- LIBRERÍA EMAILJS -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<!-- PROGRAMACIÓN FORMULARIO -->
+<script src="js/contacto.js"></script>
+<script>
+    const btn = document.getElementById('scrollTop');
+    window.addEventListener('scroll', () => btn.classList.toggle('visible', window.scrollY > 400));
+    btn.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+</script>
+</body>
+</html>

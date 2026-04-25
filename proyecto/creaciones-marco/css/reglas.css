@@ -1,0 +1,108 @@
+/* ================================================
+   CREACIONES MARCO — REGLAS.CSS
+   Media Queries para responsividad
+   Samsung Galaxy S8: 360px
+   ================================================ */
+
+
+/* Extra Small — hasta 575px  */
+@media (max-width: 575px) {
+
+    html { font-size: 15px; }
+
+    /* Navbar */
+    .navbar .navbar-brand { font-size: 1.2rem; }
+
+    /* Banner principal */
+    .banner-principal h1 { font-size: 2.2rem; }
+    .banner-principal p  { font-size: 0.92rem; }
+    .banner-principal .grupo-botones a { display: block; margin: 8px auto; width: 80%; text-align: center; }
+
+    /* Sección nosotros */
+    .sec-nosotros .foto-nosotros img { height: 280px; }
+    .sec-nosotros .foto-nosotros::before { display: none; }
+
+    /* Banner intermedio */
+    .banner-intermedio { padding: 60px 0; }
+    .banner-intermedio .cifra .numero { font-size: 2.5rem; }
+
+    /* Servicios */
+    .sec-servicios .card-servicio { margin-bottom: 20px; }
+
+    /* Galería */
+    .sec-galeria .grid-galeria {
+        grid-template-columns: 1fr 1fr;
+        grid-auto-rows: 160px;
+    }
+    .sec-galeria .grid-galeria .foto-grande {
+        grid-column: span 2;
+        grid-row: span 1;
+    }
+
+    /* Colecciones */
+    .sec-colecciones .card-coleccion img { height: 280px; }
+    .sec-colecciones .card-coleccion .info-coleccion { transform: translateY(0); }
+
+    /* Citas */
+    .sec-citas .form-cita { padding: 28px 20px; }
+    .sec-citas .info-cita { padding: 24px 0 0; }
+
+    /* Contacto */
+    .sec-contacto .contenedor-mapa iframe { height: 280px; }
+
+    /* Footer */
+    footer .descripcion-footer { max-width: 100%; }
+    footer [class*="col-"] { margin-bottom: 32px; }
+
+    /* Scroll top y WS */
+    .goto-top        { bottom: 14px; right: 16px; }
+    .container-botonws { bottom: 70px; right: 16px; }
+
+    /* Texto genérico */
+    p { font-size: 0.92rem !important; }
+}
+
+
+/* Small — 576px a 767px */
+@media (min-width: 576px) and (max-width: 767px) {
+
+    .banner-principal h1 { font-size: 2.8rem; }
+
+    .sec-galeria .grid-galeria {
+        grid-template-columns: 1fr 1fr;
+        grid-auto-rows: 200px;
+    }
+    .sec-galeria .grid-galeria .foto-grande {
+        grid-column: span 2;
+        grid-row: span 1;
+    }
+
+    .sec-colecciones .card-coleccion .info-coleccion { transform: translateY(0); }
+}
+
+
+/* Medium — 768px a 991px */
+@media (min-width: 768px) and (max-width: 991px) {
+
+    .banner-principal h1 { font-size: 3.2rem; }
+
+    .sec-galeria .grid-galeria { grid-auto-rows: 200px; }
+
+    .sec-nosotros .foto-nosotros img { height: 360px; }
+
+    .sec-citas .info-cita { padding-top: 40px; padding-left: 0; }
+}
+
+
+/* Large — 992px a 1199px */
+@media (min-width: 992px) and (max-width: 1199px) {
+
+    .sec-galeria .grid-galeria { grid-auto-rows: 230px; }
+}
+
+
+/* X-Large — 1200px y más */
+@media (min-width: 1200px) {
+
+    .sec-galeria .grid-galeria { grid-auto-rows: 260px; }
+}
